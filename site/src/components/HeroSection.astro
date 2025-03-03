@@ -1,9 +1,8 @@
 ---
-// Props (optional, but good practice if making dynamic)
-const { name, buzzwords, image } = Astro.props;
+const {name, buzzwords, image} = Astro.props;
 ---
 <section class="hero">
-    <img src={image} alt={name} class="hero-image" />
+    <img src={image} alt={name} class="hero-image"/>
     <h1>{name}</h1>
     <p>{buzzwords}</p>
 </section>
@@ -11,11 +10,31 @@ const { name, buzzwords, image } = Astro.props;
 <style>
     .hero {
         text-align: center;
-        padding: 2rem;
+        padding: 4rem 2rem;
+        background-color: #E0BBE4; /* Soft Pastel Purple */
+        color: #5A2A8C; /* Deep Purple */
+        border-bottom: 4px solid #F7A8B8; /* Pastel Pink */
     }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+        color: #5A2A8C;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        font-weight: 400;
+        color: #5A2A8C;
+    }
+
     .hero-image {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
+        border: 4px solid #F7A8B8; /* Pastel Pink */
+        object-fit: cover;
+        margin-bottom: 1.5rem; /* Some space under the image */
     }
 </style>

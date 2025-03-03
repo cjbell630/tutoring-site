@@ -1,5 +1,5 @@
 ---
-const { title, description } = Astro.props;
+const {title, description} = Astro.props;
 ---
 <div class="card">
     <h2>{title}</h2>
@@ -8,9 +8,30 @@ const { title, description } = Astro.props;
 
 <style>
     .card {
-        background: #f8f9fa;
-        padding: 1rem;
+        background: #F3E5F5; /* Light Pastel Purple */
+        padding: 1.5rem;
         border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        margin-bottom: 2rem;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card h2 {
+        color: #7B1FA2; /* Darker Purple */
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .card p {
+        color: #333;
+        font-size: 1rem;
+        font-weight: 400;
     }
 </style>

@@ -4,28 +4,40 @@ import SubjectCard from "../components/SubjectCard.astro";
 import PricingSection from "../components/PricingSection.astro";
 
 const subjects = [
-	{ title: "Math Tutoring", description: "Algebra, Calculus, and more!" },
-	{ title: "Science Tutoring", description: "Physics, Chemistry, and Biology." },
-	{ title: "Programming Tutoring", description: "Python, JavaScript, and web development." }
+    {title: "Math Tutoring", description: "Algebra, Calculus, and more!"},
+    {title: "Science Tutoring", description: "Physics, Chemistry, and Biology."},
+    {title: "Programming Tutoring", description: "Python, JavaScript, and web development."}
 ];
 
 const pricePerHour = 30; // Update as needed
 ---
-
-<HeroSection name="Your Name" image="/profile.jpg" buzzwords="Expert Tutor | 1-on-1 Learning | Personalized Lessons" />
+<HeroSection name="Your Name" image="/profile.jpg" buzzwords="Expert Tutor | 1-on-1 Learning | Personalized Lessons"/>
 
 <section class="subjects">
-	{subjects.map((subject) => <SubjectCard {...subject} />)}
+    {subjects.map((subject) =>
+            <SubjectCard {...subject}/>)}
 </section>
 
-<PricingSection price={pricePerHour} />
+<PricingSection price={pricePerHour}/>
 
 <style>
-	.subjects {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
-		justify-content: center;
-		padding: 2rem;
-	}
+    body {
+        background-color: #F1E6F6; /* Soft pastel background for the whole page */
+        margin: 0;
+        font-family: 'Helvetica Neue', sans-serif;
+        color: #5A2A8C;
+    }
+
+    .subjects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
 </style>
