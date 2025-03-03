@@ -2,6 +2,7 @@
 import HeroSection from "../components/HeroSection.astro";
 import SubjectCard from "../components/SubjectCard.astro";
 import PricingSection from "../components/PricingSection.astro";
+import ContactButton from "../components/ContactButton.astro";
 
 const subjects = [
     {title: "Math Tutoring", description: "Algebra, Calculus, and more!", bullets: ["bullet 1", "bullet 2"]},
@@ -19,6 +20,7 @@ const pricePerHour = 30; // Update as needed
 </section>
 
 <PricingSection price={pricePerHour}/>
+<ContactButton />
 
 <style>
     body {
