@@ -1,0 +1,21 @@
+---
+// Props (optional, but good practice if making dynamic)
+const { name, buzzwords, image } = Astro.props;
+---
+<section class="hero">
+    <img src={image} alt={name} class="hero-image" />
+    <h1>{name}</h1>
+    <p>{buzzwords}</p>
+</section>
+
+<style>
+    .hero {
+        text-align: center;
+        padding: 2rem;
+    }
+    .hero-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+</style>

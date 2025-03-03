@@ -1,0 +1,16 @@
+---
+const { price } = Astro.props;
+---
+<section class="pricing">
+    <h2>Hourly Rate</h2>
+    <p>${price} per hour</p>
+</section>
+
+<style>
+    .pricing {
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+</style>
