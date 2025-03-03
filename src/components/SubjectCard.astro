@@ -4,6 +4,7 @@ const {title, description} = Astro.props;
 <div class="card">
     <h2>{title}</h2>
     <p>{description}</p>
+    <button class="details">Details</button>
 </div>
 
 <style>
@@ -34,4 +35,29 @@ const {title, description} = Astro.props;
         font-size: 1rem;
         font-weight: 400;
     }
+
+    .details {
+        background-color: #5A2A8C; /* Soft purple color */
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .details:hover {
+        background-color: #7B1FA2; /* Darker purple on hover */
+        transform: translateY(-3px);
+    }
+
+    .details:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(90, 42, 140, 0.7); /* Purple focus outline */
+    }
+
 </style>
