@@ -7,16 +7,22 @@ import FAQSection from "../components/FAQSection.astro";
 import SubjectsSection from "../components/SubjectsSection.astro";
 
 const subjects = [
-    {title: "Math Tutoring", description: "Algebra, Calculus, and more!", bullets: ["bullet 1", "bullet 2"]},
-    {title: "Science Tutoring", description: "Physics, Chemistry, and Biology.", bullets: ["bullet 1", "bullet 2"]},
+    {title: "Math Tutoring", description: "Algebra, Calculus, and more!", bullets: ["bullet 1", "bullet 2"], detailsTarget: "faq-english-details"},
+    {title: "Science Tutoring", description: "Physics, Chemistry, and Biology.", bullets: ["bullet 1", "bullet 2"], detailsTarget: "faq-english-details"},
     {
         title: "Programming Tutoring",
         description: "Python, JavaScript, and web development.",
-        bullets: ["bullet 1", "bullet 2"]
+        bullets: ["bullet 1", "bullet 2"],
+        detailsTarget: "faq-english-details"
     }
 ];
 const faqs = [
-    {q: "question1 ", a: "answer 1"}
+    {id: "faq-location", q: "Where do you conduct your lessons?", a: "answer 1"},
+    {id: "faq-kyoto-kobe", q: "I live in Kyoto or Kobe. Can I still take lessons with you?", a: "answer 1"},
+    {id: "faq-first-lesson", q: "What exactly do you mean \"the first lesson is free\"?", a: "answer 1"},
+    {id: "faq-english-details", q: "What are your English lessons like?", a: "answer 1"},
+    {id: "faq-programming-details", q: "What are your programming lessons like?", a: "answer 1"},
+    {id: "faq-other", q: "question1 ", a: "answer 1"},
 ];
 
 const pricePerHour = 30; // Update as needed

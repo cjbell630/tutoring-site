@@ -1,5 +1,5 @@
 ---
-const {title, description, bullets} = Astro.props;
+const {title, description, bullets, detailsTarget} = Astro.props;
 ---
 <div class="card">
     <h2>{title}</h2>
@@ -9,7 +9,7 @@ const {title, description, bullets} = Astro.props;
                 <li>{point}</li>
         ))}
     </ul>
-    <button class="details">Details</button>
+    <button class="details-button" data-target={detailsTarget}>Details</button>
 </div>
 
 <style>
@@ -42,7 +42,7 @@ const {title, description, bullets} = Astro.props;
         font-weight: 400;
     }
 
-    .details {
+    .details-button {
         background-color: #5A2A8C; /* Soft purple color */
         color: white;
         padding: 1rem 2rem;
@@ -56,12 +56,12 @@ const {title, description, bullets} = Astro.props;
         margin-top: 1rem;
     }
 
-    .details:hover {
+    .details-button:hover {
         background-color: #7B1FA2; /* Darker purple on hover */
         transform: translateY(-3px);
     }
 
-    .details:focus {
+    .details-button:focus {
         outline: none;
         box-shadow: 0 0 5px rgba(90, 42, 140, 0.7); /* Purple focus outline */
     }
@@ -81,3 +81,28 @@ const {title, description, bullets} = Astro.props;
     }
 
 </style>
+
+<script>
+    function highlightElement(el) {
+        const fadeInTime = 0.2;
+        el.style.transition = `background-color ${fadeInTime}s ease-in`;
+        el.style.backgroundColor = "rgba(128, 0, 128, 0.4)";
+
+        setTimeout(() => {
+            el.style.transition = "background-color 1.5s ease-out";
+            el.style.backgroundColor = "transparent";
+        }, fadeInTime*1000);
+    }
+
+    const buttons = document.querySelectorAll(".details-button");
+    buttons.forEach(button => {
+        button.addEventListener("click", e => {
+            console.log(button.attributes);
+            console.log("clicked, target: " + button.getAttribute("data-target") + "");
+            const targetElement = document.getElementById(button.getAttribute("data-target") + "");
+            targetElement.classList.add("active");
+            targetElement.scrollIntoView({behavior: "smooth"});
+            highlightElement(targetElement);
+        });
+    });
+</script>

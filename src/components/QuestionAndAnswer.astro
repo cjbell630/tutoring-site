@@ -1,8 +1,8 @@
 ---
-const {question, answer} = Astro.props;
+const {id, question, answer} = Astro.props;
 ---
 
-<div class="faq-item">
+<div class="faq-item" id={id}>
     <button class="faq-question">
         {question}
         <span class="arrow">▼</span>
