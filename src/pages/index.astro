@@ -4,6 +4,7 @@ import SubjectCard from "../components/SubjectCard.astro";
 import PricingSection from "../components/PricingSection.astro";
 import ContactButton from "../components/ContactButton.astro";
 import FAQSection from "../components/FAQSection.astro";
+import SubjectsSection from "../components/SubjectsSection.astro";
 
 const subjects = [
     {title: "Math Tutoring", description: "Algebra, Calculus, and more!", bullets: ["bullet 1", "bullet 2"]},
@@ -22,11 +23,8 @@ const pricePerHour = 30; // Update as needed
 ---
 
 <meta charset="utf-8">
-<HeroSection name="Your Name" image="/profile.jpg" buzzwords="Expert Tutor | 1-on-1 Learning | Personalized Lessons"/>
-<section class="subjects">
-    {subjects.map((subject) =>
-            <SubjectCard {...subject}/>)}
-</section>
+<HeroSection name="Connor Bell" image="/profile.jpg" details="Expert Tutor | 1-on-1 Learning | Personalized Lessons"/>
+<SubjectsSection subjects={subjects}></SubjectsSection>
 
 <FAQSection faqs={faqs}/>
 <PricingSection price={pricePerHour}/>
@@ -38,15 +36,6 @@ const pricePerHour = 30; // Update as needed
         margin: 0;
         font-family: 'Helvetica Neue', sans-serif;
         color: #5A2A8C;
-    }
-
-    .subjects {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-        padding: 2rem;
-        margin-top: 3rem;
     }
 
     section {
