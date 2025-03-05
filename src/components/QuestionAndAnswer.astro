@@ -1,0 +1,67 @@
+---
+const {question, answer} = Astro.props;
+---
+
+<div class="faq-item">
+    <button class="faq-question">
+        {question}
+        <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+        {answer}
+    </div>
+</div>
+
+<style>
+    .faq-item {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 200px; /* Adjust as needed */
+        padding-top: 10px;
+    }
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .arrow {
+        transform: rotate(180deg);
+    }
+</style>
+
+<script>
+    function toggleFAQ(button) {
+        console.log("clicked")
+        const item = button.parentElement;
+        item.classList.toggle('active');
+    }
+
+    const buttons = document.querySelectorAll(".faq-question");
+    buttons.forEach(button => {
+        button.addEventListener("click", e => {
+            toggleFAQ(button);
+        });
+    });
+</script>
