@@ -2,12 +2,34 @@
 const {name, details, image} = Astro.props;
 ---
 <section class="hero">
-    <div class="hero-profile">
-        <img src={image} alt={name} class="hero-image"/>
-        <h1>{name}</h1>
-    </div>
-    <div class="hero-banner">
-        {details}
+    <div class="hero-body">
+        <div class="hero-profile">
+            <img src={image} alt={name} class="hero-image"/>
+            <h1>{name}</h1>
+            <!--
+            <button class="about-me-button">
+                <span class="arrow spacer">▼</span>
+                About Me!
+                <span class="arrow">▼</span>
+            </button>
+            -->
+        </div>
+        <div class="hero-banner">
+            <h2>Tutoring in Osaka!!</h2>
+            <hr/>
+            <p>One-on-one personalized lessons in the Osaka area! Catered specifically to your interests and your
+                learning style, at your own pace. Lessons can be taught in Japanese, English, or a mixture of both!</p>
+            <h3><u>The first lesson is free</u>, so don't worry!</h3>
+        </div>
+        <div class="about-me-section">
+            <h3>About Me!</h3>
+            <ul style="list-style-type:none;">
+                <li>Age: 22</li>
+                <li>Shushin: Georgia, USA</li>
+                <li>Education: UGA, KUFS</li>
+                <li>Degree: Programming, Japanese</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -19,6 +41,7 @@ const {name, details, image} = Astro.props;
         color: #5A2A8C; /* Deep Purple */
         border-bottom: 4px solid #F7A8B8; /* Pastel Pink */
         display: flex;
+        flex-direction: column;
     }
 
     .hero h1 {
@@ -28,6 +51,22 @@ const {name, details, image} = Astro.props;
         color: #5A2A8C;
     }
 
+    .hero h2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #5A2A8C;
+    }
+
+    .hero hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, transparent, #5A2A8C, transparent);
+        width: 60%;
+        opacity: 0.8;
+    }
+
+
     .hero p {
         font-size: 1.2rem;
         margin-top: 0.5rem;
@@ -35,12 +74,24 @@ const {name, details, image} = Astro.props;
         color: #5A2A8C;
     }
 
+    .hero-body {
+        display: flex;
+        flex-direction: row;
+    }
+
     .hero-profile {
-        flex: 1;
+        flex: 3;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
 
     .hero-banner {
-        flex: 2;
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 
     .hero-image {
@@ -51,4 +102,90 @@ const {name, details, image} = Astro.props;
         object-fit: cover;
         margin-bottom: 1rem; /* Some space under the image */
     }
+
+    .about-me-section {
+        flex: 2;
+        border-left: 1px solid #000;
+        margin-left: 2.5rem;
+        padding-left:2.5rem;
+    }
+
+    .about-me-section ul {
+        text-align: left;
+        padding-left: 2em;
+        text-indent: -2em;
+    }
+
+
+    /* TODO is the same as the button in subject card but with different colors */
+    .about-me-button {
+        background-color: #5A2A8C; /* Soft purple color */
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+        text-align: left;
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-me-button:hover {
+        background-color: #7B1FA2; /* Darker purple on hover */
+        transform: translateY(-3px);
+    }
+
+    .about-me-button:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(90, 42, 140, 0.7); /* Purple focus outline */
+    }
+
+    /*
+    .about-me-section {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+
+    .hero.active .about-me-section {
+        max-height: 200px;
+        padding-top: 10px;
+    }
+    */
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .hero.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .spacer {
+        color: transparent;
+    }
 </style>
+
+
+<script>
+    const heroSection = document.querySelector('.hero');
+
+    function toggleAboutMe() {
+        console.log("clicked")
+        //const item = button.parentElement;
+        heroSection.classList.toggle('active');
+    }
+
+    const buttons = document.querySelectorAll(".about-me-button");
+    buttons.forEach(button => {
+        button.addEventListener("click", e => {
+            toggleAboutMe();
+        });
+    });
+</script>
