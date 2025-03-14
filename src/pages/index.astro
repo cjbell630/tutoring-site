@@ -5,6 +5,7 @@ import ContactButton from "../components/ContactButton.astro";
 import FAQSection from "../components/FAQSection.astro";
 import SubjectsSection from "../components/SubjectsSection.astro";
 
+const lineURL = "https://lin.ee/F0ziwOI";
 const subjects = [
     {
         title: "English 🔠💬",
@@ -28,7 +29,7 @@ const subjects = [
     }
 ];
 const generalFAQs = [
-    {id: "faq-contact", q: "🗓️ How do I schedule?", a: "<a href=''>Click here to contact me on LINE!!</a>"},
+    {id: "faq-contact", q: "🗓️ How do I schedule?", a: `<a href=${lineURL}>Click here to contact me on LINE!!</a>`},
     {
         id: "faq-location",
         q: "📍 Where do you conduct your lessons?",
@@ -110,7 +111,7 @@ const pricePerHour = 30; // Update as needed
 <SubjectsSection subjects={subjects}></SubjectsSection>
 
 <FAQSection categories={categories}/>
-<ContactButton/>
+<ContactButton url={lineURL}/>
 
 <style>
     body {
