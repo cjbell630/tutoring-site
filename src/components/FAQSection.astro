@@ -11,7 +11,7 @@ const {categories} = Astro.props;
                 <div key={category.name}>
                     <h4>{category.name}</h4>
                     {category.faqs.map(faq => (
-                            <QuestionAndAnswer key={faq.id} id={faq.id} question={faq.q} answer={faq.a} />
+                            <QuestionAndAnswer key={faq.id} id={faq.id} question={faq.q} answer={faq.a}/>
                     ))}
                 </div>
         ))}
