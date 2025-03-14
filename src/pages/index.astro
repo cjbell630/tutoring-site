@@ -6,23 +6,45 @@ import FAQSection from "../components/FAQSection.astro";
 import SubjectsSection from "../components/SubjectsSection.astro";
 
 const subjects = [
-    {title: "Math Tutoring", description: "Algebra, Calculus, and more!", bullets: ["bullet 1", "bullet 2"], detailsTarget: "faq-english-details"},
-    {title: "Science Tutoring", description: "Physics, Chemistry, and Biology.", bullets: ["bullet 1", "bullet 2"], detailsTarget: "faq-english-details"},
     {
-        title: "Programming Tutoring",
-        description: "Python, JavaScript, and web development.",
+        title: "English 🔠",
+        description: "Algebra, Calculus, and more!",
         bullets: ["bullet 1", "bullet 2"],
         detailsTarget: "faq-english-details"
+    },
+    {
+        title: "Programming 💻",
+        description: "Whether you have years of experience or are just starting out, let's learn to code!",
+        bullets: ["Learn l ", "Learn"],
+        detailsTarget: "faq-programming-details"
     }
 ];
-const faqs = [
-    {id: "faq-location", q: "Where do you conduct your lessons?", a: "answer 1"},
+const generalFAQs = [
+    {id: "faq-contact", q: "🗓️ how do i schedule", a: "Click the button below to contact me on LINE!!"},
+    {id: "faq-location", q: "📍 Where do you conduct your lessons?", a: "answer 1"},
     {id: "faq-kyoto-kobe", q: "I live in Kyoto or Kobe. Can I still take lessons with you?", a: "answer 1"},
-    {id: "faq-first-lesson", q: "What exactly do you mean \"the first lesson is free\"?", a: "answer 1"},
-    {id: "faq-english-details", q: "What are your English lessons like?", a: "answer 1"},
-    {id: "faq-programming-details", q: "What are your programming lessons like?", a: "answer 1"},
-    {id: "faq-other", q: "question1 ", a: "answer 1"},
+    {id: "faq-contact", q: "🕒 How long are your lessons?", a: "sdf"},
+    {id: "faq-first-lesson", q: "💸 What exactly do you mean \"the first lesson is free\"?", a: "answer 1"},
 ];
+
+const englishFAQs = [
+    {id: "faq-english-details", q: "What are your English lessons like?", a: "answer 1"},
+]
+
+const programmingFAQs = [
+    {id: "faq-programming-details", q: "What are your programming lessons like?", a: "answer 1"},
+    {
+        id: "faq-programming-details",
+        q: "📌 What languages do you teach?",
+        a: "Python, Java, <br/>C, C++, C#, <br/>Web (HTML, CSS, JavaScript), <br/>Lua, Kotlin"
+    },
+]
+
+const categories = [
+    {name: "", faqs: generalFAQs},
+    {name: "English", faqs: englishFAQs},
+    {name: "Programming", faqs: programmingFAQs},
+]
 
 const pricePerHour = 30; // Update as needed
 ---
@@ -31,7 +53,7 @@ const pricePerHour = 30; // Update as needed
 <HeroSection name="Connor Bell" image="/profile.jpg" details="Expert Tutor | 1-on-1 Learning | Personalized Lessons"/>
 <SubjectsSection subjects={subjects}></SubjectsSection>
 
-<FAQSection faqs={faqs}/>
+<FAQSection categories={categories}/>
 <ContactButton/>
 
 <style>

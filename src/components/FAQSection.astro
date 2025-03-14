@@ -1,13 +1,19 @@
 ---
 import QuestionAndAnswer from "./QuestionAndAnswer.astro";
-const {faqs} = Astro.props;
+import ContactButton from "./ContactButton.astro";
+const {categories} = Astro.props;
 ---
 
 <section class="faq">
     <div class="faq-inside">
-        <h2>FAQ</h2>
-        {faqs.map(faq => (
-                <QuestionAndAnswer id={faq.id} question={faq.q} answer={faq.a}/>
+        <h2>FAQs</h2>
+        {categories.map(category => (
+                <div key={category.name}>
+                    <h4>{category.name}</h4>
+                    {category.faqs.map(faq => (
+                            <QuestionAndAnswer key={faq.id} id={faq.id} question={faq.q} answer={faq.a} />
+                    ))}
+                </div>
         ))}
     </div>
 </section>
@@ -23,6 +29,11 @@ const {faqs} = Astro.props;
         font-weight: 700; /* Bold */
         background-color: #D1C4E9; /* Soft Pastel Lavender */
         color: #5A2A8C; /* Deep Purple */
+    }
+
+    .faq h4 {
+        margin-top: 2rem;
+        margin-bottom: 0.25rem;
     }
 
     .faq-inside {

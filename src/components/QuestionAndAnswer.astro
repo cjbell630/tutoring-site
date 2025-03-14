@@ -7,9 +7,7 @@ const {id, question, answer} = Astro.props;
         {question}
         <span class="arrow">▼</span>
     </button>
-    <div class="faq-answer">
-        {answer}
-    </div>
+    <div class="faq-answer" set:html={answer}></div>
 </div>
 
 <style>
@@ -33,6 +31,7 @@ const {id, question, answer} = Astro.props;
 
     .faq-answer {
         max-height: 0;
+        font-size: 1.2rem;
         overflow: hidden;
         transition: max-height 0.3s ease-out, padding 0.3s ease-out;
     }
