@@ -9,12 +9,13 @@ const lineURL = "https://lin.ee/F0ziwOI";
 const subjects = [
     {
         title: "English 🔤💬",
-        description: "L",
+        description: "Personalized lessons for anyone, whether you want to learn from scratch, " +
+            "or just want to practice chatting!!",
         bullets: [
             "Learn English you want to learn at your own pace!",
             "Get one-on-one conversation practice with a native speaker!",
             "Get help with homework, email corrections, etc. with in depth explanations!",
-            "Prepare for tests like TOEIC, Eiken, IELTS"
+            "Prepare for tests like TOEIC, Eiken, IELTS!"
         ],
         detailsTarget: "faq-english-details"
     },
@@ -23,7 +24,8 @@ const subjects = [
         description: "Whether you have years of experience or are just starting out, let's learn to code!",
         bullets: [
             "Learn various languages (see FAQs for details)",
-            "Learn in Japanese, English, or a mixture of both!"
+            "Learn other programming and computer skills, such as GitHub and CLI!",
+            "Learn in Japanese, English, or a mixture of both!",
         ],
         detailsTarget: "faq-programming-details"
     }
@@ -43,8 +45,9 @@ const generalFAQs = [
     },
     {
         id: "faq-kyoto-kobe",
-        q: "🚇 I live in Kyoto or Kobe. Can I still take lessons with you?",
-        a: "Of course!! We can meet in the middle"
+        q: "🚇 I live in Kyoto or Kobe. Can we still meet?",
+        a: "Of course!! As long as it's not too far, we can meet somewhere that's equal distance for both of us. " +
+            "If you're not sure, feel free to ask :)"
     },
     {
         id: "faq-contact",
@@ -52,7 +55,16 @@ const generalFAQs = [
         a: "However long and often you want, schedules permitting!! " +
             "Typically the lessons are about 1 hour, but they can be longer if there's availability!"
     },
-    {id: "faq-first-lesson", q: "💸 What exactly do you mean \"the first lesson is free\"?", a: "answer 1"},
+    {
+        id: "faq-first-lesson",
+        q: "💸 What exactly do you mean \"the first lesson is free\"?",
+        a: "The first meeting will start with us getting to know each other, " +
+            "and discussing your goals and motivations, as well as your current level. " +
+            "Then, we'll do a bit of practice/teaching. " +
+            "You can use this first lesson to decide if the environment is right for you, " +
+            "which is why I decided to make it free! That way, there's no pressure. " +
+            "If you decide not to continue, that's absolutely okay! "
+    },
     {
         id: "faq-commitment",
         q: "🔁 Do I have to sign up for multiple lessons at once? What if I decide it's not for me?",
@@ -80,19 +92,26 @@ const programmingFAQs = [
     {
         id: "faq-programming-details",
         q: "🤔 What are your programming lessons like?",
-        a: "It depends on your experience, but "
+        a: "It depends on your experience and learning style, " +
+            "but broadly speaking we'll start by introducing the basics, " +
+            "and then mix in new concepts and ideas as we go along. " +
+            "I like presenting problems and trying to lead my students to discover solutions on their own, " +
+            "but some people prefer to see examples first before practicing, " +
+            "so we can see which method works best for you!<br/><br/>" +
+            "It's best if you can bring your own laptop, but if you do not have one, " +
+            "let me know and I'll see if we can work something out :)"
     },
     {
         id: "faq-programming-languages",
         q: "📌 What languages do you teach?",
-        a: "Python, Java, <br/>C, C++, C#, <br/>Web (HTML, CSS, JavaScript), <br/>Lua, Kotlin"
+        a: "Python, Java,<br/>C, C++, C#,<br/>Web (HTML, CSS, JavaScript),<br/>Lua, Kotlin"
     },
     {
         id: "faq-programming-idk",
-        q: "🔰 It's my first time learning to code, which language should I choose?",
+        q: "🔰 It's my first time learning programming. Which language should I start with?",
         a: "That's no problem! For your first language, a good choice might be Python! " +
             "It's more simple than other languages, but can be used in almost any situation. " +
-            "But if you have any questions, we can discuss it at your first lesson :)"
+            "But if you have any questions, we can discuss it and decide at your first lesson :)"
     },
     {
         id: "faq-programming-english",
