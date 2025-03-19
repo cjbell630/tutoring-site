@@ -47,16 +47,12 @@ const {name, details, image} = Astro.props;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
         margin-top: 0rem;
         margin-bottom: 0rem;
         color: #5A2A8C;
     }
 
     .hero h2 {
-        font-size: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
         color: #5A2A8C;
     }
 
@@ -94,11 +90,10 @@ const {name, details, image} = Astro.props;
         flex-direction: column;
         text-align: center;
         align-items: center;
+        margin-left: 4%;
     }
 
     .hero-image {
-        width: 12rem;
-        height: 12rem;
         border-radius: 50%;
         border: 4px solid #F7A8B8; /* Pastel Pink */
         object-fit: cover;
@@ -174,6 +169,20 @@ const {name, details, image} = Astro.props;
         .hero-body {
             flex: 8; /* 80% of horiz if whole hero section is row */
         }
+        .hero-body h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-body h2 {
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image {
+            max-height: 15rem;
+            width: auto; /*1368*743*/
+        }
 
         .about-me-section {
             flex: 2; /* 20% of horiz if whole hero section is row */
@@ -187,6 +196,26 @@ const {name, details, image} = Astro.props;
     @media (orientation: portrait) {
         .hero {
             flex-direction: column;
+        }
+
+        /* TODO maybe only for sufficiently thin devices */
+        .hero-body {
+            flex-direction: column;
+        }
+
+        .hero-body h1 {
+            font-size: 5vw;
+        }
+
+        .hero-body h2 {
+            font-size: 8vw;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image {
+            max-width: 50%;
+            height: auto; /*1368*743*/
         }
 
         .about-me-section {
