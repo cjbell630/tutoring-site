@@ -21,7 +21,6 @@ const {id, question, answer} = Astro.props;
         background: none;
         border: none;
         text-align: left;
-        font-size: 1.2rem;
         font-weight: bold;
         cursor: pointer;
         display: flex;
@@ -31,7 +30,6 @@ const {id, question, answer} = Astro.props;
 
     .faq-answer {
         max-height: 0;
-        font-size: 1.2rem;
         overflow: hidden;
         transition: max-height 0.3s ease-out, padding 0.3s ease-out;
     }
@@ -47,6 +45,28 @@ const {id, question, answer} = Astro.props;
 
     .faq-item.active .arrow {
         transform: rotate(180deg);
+    }
+
+    /* LANDSCAPE ONLY */
+    @media (orientation: landscape) {
+        .faq-question {
+            font-size: 1.2rem;
+        }
+        .faq-answer {
+            font-size: 1.2rem;
+        }
+    }
+
+
+    /* PORTRAIT ONLY */
+    @media (orientation: portrait) {
+
+        .faq-question {
+            font-size: 1rem;
+        }
+        .faq-answer {
+            font-size: 0.9rem;
+        }
     }
 </style>
 
