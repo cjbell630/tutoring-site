@@ -22,20 +22,21 @@ const {name, details, image} = Astro.props;
                 or a mixture of both!</p> <!-- casual and friendly tutoring?-->
             <h3><u>The first lesson is free</u>, so don't worry!</h3>
         </div>
-        <div class="about-me-section">
-            <h3>About Me!</h3>
-            <ul style="list-style-type:none;">
-                <li>Age: 22</li>
-                <li>Shushin: Georgia, USA 🗽</li>
-                <li>Education: UGA, KUFS</li>
-                <li>Degree: Programming, Japanese</li>
-                <li>Hobbies: Movies, TV, hiking, travel, games, cooking, books</li>
-            </ul>
-        </div>
+    </div>
+    <div class="about-me-section">
+        <h3>About Me!</h3>
+        <ul style="list-style-type:none;">
+            <li>Age: 22</li>
+            <li>Shushin: Georgia, USA 🗽</li>
+            <li>Education: UGA, KUFS</li>
+            <li>Degree: Programming, Japanese</li>
+            <li>Hobbies: Movies, TV, hiking, travel, games, cooking, books</li>
+        </ul>
     </div>
 </section>
 
 <style>
+
     .hero {
         text-align: center;
         padding: 2.5rem 2rem;
@@ -43,7 +44,6 @@ const {name, details, image} = Astro.props;
         color: #5A2A8C; /* Deep Purple */
         border-bottom: 4px solid #F7A8B8; /* Pastel Pink */
         display: flex;
-        flex-direction: column;
     }
 
     .hero h1 {
@@ -82,14 +82,14 @@ const {name, details, image} = Astro.props;
     }
 
     .hero-profile {
-        flex: 3;
+        flex: 3; /* 30% of horiz if whole hero section is row */
         align-items: center;
         display: flex;
         flex-direction: column;
     }
 
     .hero-banner {
-        flex: 5;
+        flex: 5; /* 50% of horiz if whole hero section is row */
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -106,10 +106,6 @@ const {name, details, image} = Astro.props;
     }
 
     .about-me-section {
-        flex: 2;
-        border-left: 1px solid #000;
-        margin-left: 2.5rem;
-        padding-left: 2.5rem;
     }
 
     .about-me-section ul {
@@ -171,6 +167,33 @@ const {name, details, image} = Astro.props;
 
     .spacer {
         color: transparent;
+    }
+
+    /* LANDSCAPE ONLY */
+    @media (orientation: landscape) {
+        .hero-body {
+            flex: 8; /* 80% of horiz if whole hero section is row */
+        }
+
+        .about-me-section {
+            flex: 2; /* 20% of horiz if whole hero section is row */
+            border-left: 1px solid #000;
+            margin-left: 2.5rem;
+            padding-left: 2.5rem;
+        }
+    }
+
+    /* PORTRAIT ONLY */
+    @media (orientation: portrait) {
+        .hero {
+            flex-direction: column;
+        }
+
+        .about-me-section {
+            border-top: 1px solid #000;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+        }
     }
 </style>
 
