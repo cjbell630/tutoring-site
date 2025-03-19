@@ -16,15 +16,10 @@ const {url} = Astro.props;
         font-family: 'Twemoji Country Flags', メイリオ, Meiryo, "Lucida Grande", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", Arial, sans-serif !important;
         list-style: none;
         position: fixed;
-        bottom: 4.6vh; /*og 20px -> 30px */
-        right: 4.6vh; /*og 20px -> 30px*/
         z-index: 1000;
         display: block;
-        height: 6.46vh /*42px*/;
         border-radius: 7px;
-        line-height: 6.46vh /*42px*/;
         text-align: center;
-        font-size: 2.15vh /*14px*/;
         box-sizing: border-box;
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
         transform: scale(1.3); /* og not present*/
@@ -52,7 +47,6 @@ const {url} = Astro.props;
 
     .c-btn_line {
         background: url("https://c.bookwalker.jp/ex/scc/common/img/btn_icon_line.png") no-repeat #00C300;
-        background-size: 6.46vh 6.46vh /*42px 42px*/;
     }
 
     .c-btn_line:hover {
@@ -68,7 +62,6 @@ const {url} = Astro.props;
         word-wrap: break-word;
         overflow-wrap: break-word;
         //display: block;
-        margin: 0 0 0 6.46vh /*0 0 0 42px*/;
         font-weight: bold;
         color: #fff;
     }
@@ -79,5 +72,44 @@ const {url} = Astro.props;
 
     .c-btn_line:hover span {
         border-left: 2px transparent;
+    }
+
+    /* LANDSCAPE ONLY */
+    @media (orientation: landscape) {
+        .c-btn_sns {
+            bottom: 4.6vh; /*og 20px -> 30px */
+            right: 4.6vh; /*og 20px -> 30px*/
+            height: 6.46vh ;/*42px*/
+            line-height: 6.46vh ;/*42px*/
+            font-size: 2.15vh ;/*14px*/
+        }
+
+        .c-btn_line {
+            background-size: 6.46vh 6.46vh /*42px 42px*/;
+        }
+
+        .c-btn_sns__label {
+            margin: 0 0 0 6.46vh /*0 0 0 42px*/;
+        }
+    }
+
+
+    /* PORTRAIT ONLY */
+    @media (orientation: portrait) {
+        .c-btn_sns {
+            bottom: 6vw; /*og 20px -> 30px */
+            right: 8vw; /*og 20px -> 30px*/
+            height: 9.69vw ;/*42px*/
+            line-height: 9.69vw ;/*42px*/
+            font-size: 3.225vw ;/*14px*/
+        }
+
+        .c-btn_line {
+            background-size: 9.69vw 9.69vw /*42px 42px*/;
+        }
+
+        .c-btn_sns__label {
+            margin: 0 0 0 9.69vw /*0 0 0 42px*/;
+        }
     }
 </style>
